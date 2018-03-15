@@ -1,64 +1,42 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        csscoffeeclub
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
+  <div class="topone">
+    <div id="circle">
     </div>
-  </section>
+  </div>
 </template>
 
-<script>
-import AppLogo from '~/components/AppLogo.vue'
-
-export default {
-  components: {
-    AppLogo
-  }
-}
-</script>
-
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+#circle {
+  background: #cfe7f0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
   text-align: center;
+  margin: 0 auto;
+  animation: bounceIn 2s;
+  animation-iteration-count: 2;
+  opacity: 0;
 }
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+#circle:hover {
+  animation-play-state: paused;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    background: #9FCFE1;
+    opacity: 1;
+  }
 
-.links {
-  padding-top: 15px;
+  100% {
+    transform: scale(0.1);
+    opacity: 0.5;
+  }
 }
 </style>
